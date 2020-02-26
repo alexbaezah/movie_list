@@ -1,0 +1,16 @@
+<div class='container'>
+    <div class='row text-center'>
+      <div class='col-md-6'><h1>Películas</h1>
+        <br>
+      <% @movie_undone.each do |undone| %>
+        <h4><%= undone.name %></h4>
+      <% end %>
+      </div>
+      <div class='col-md'><h1>Películas favoritas</h1>
+        <br>
+      <% @movie_done.each do |done| %>
+        <h4><%= done.name %></h4>
+      <% end %>
+      </div>
+    </div>
+</div>

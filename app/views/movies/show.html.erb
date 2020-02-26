@@ -1,0 +1,13 @@
+
+<div class='text-center'>
+    <h3><%= @movie.name%></h3>
+    <br>
+    <h3><%= @movie_done %> </h3>
+    <h3><%= @movie_undone %></h3>
+    <br>
+    <% @movie.tags.each do |movie| %>
+    <br>
+    <h3> <%= movie.name%> </h3>
+    <%end%>
+     
+</div>

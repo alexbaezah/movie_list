@@ -1,0 +1,13 @@
+<div class="text-center"> 
+    <%= form_for @movie do |f| %>
+    <h3><%= f.label "nombre" %></h3>
+        <%= f.text_field :name %>
+    <br>
+    <h3><%= f.label "año" %> </h3>
+        <%= f.date_field :age %>  
+    <br>
+    <%= f.submit('Actualizar', class: "btn btn-primary") %> 
+    <%end%>
+
+
+</div>

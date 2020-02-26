@@ -1,0 +1,42 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">nombre</th>
+            <th scope="col">favorito</th>
+            <th scope="col">año </th>
+            <th scope="col">etiqueta</th>
+        </tr>
+       
+    </thead>
+    <tbody>
+      <% @movies.each do |movie| %> 
+      <tr>
+        <th scope="row"><%= movie.id %></th>
+        <td><%= link_to movie.name, movie_path(movie) %></td>
+        <td> <% if movie.favorite == false %> 
+          <%= link_to "marcar como favorito", movie_favorite_path(movie), type: 'button', class: "btn btn-success" %></td>
+        <%end%>
+        <td><%= movie.age %> </td>
+        <td><%= movie.tags.pluck(:name).join(", ") %>
+          <%= form_tag(add_tag_movie_path(movie)) do %>
+          <%= text_field_tag "name" %>
+        <%end%>
+          
+        </td>
+        
+        <td><%= link_to "editar", movie_edit_path(movie) %></td>
+        <td><%= link_to "eliminar", movie_path(movie), method: :delete%></td>
+        <td> <%= link_to "mostrar", movie_path(movie)%></td>
+        
+        <%end%> 
+        
+      </tr>
+    </tbody>
+</table>
+
+<%= link_to "Agregar película", movies_new_path %>
+<br>
+<%= link_to "lista de favoritos", movies_list_path %>
+
+
